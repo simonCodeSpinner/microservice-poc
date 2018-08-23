@@ -17,20 +17,22 @@ import java.util.List;
 @RestController
 public class HipChatController
 {
+	
 	@Autowired HipChatService hipChatService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin//(origins = "http://localhost:4200")
 	@GetMapping("/orders")
 	public List<Order> getOrders() throws URISyntaxException, JSONException
 	{
 		return hipChatService.getOrders();
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin//(origins = "http://localhost:4200")
 	@PostMapping("/menu")
 	public PublishResponse publishMenu(@RequestBody Message message) throws URISyntaxException
 	{
 		return hipChatService.publishMenu(message);
 	}
+	
 
 }

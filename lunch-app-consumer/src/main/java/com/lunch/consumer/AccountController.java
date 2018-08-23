@@ -34,4 +34,10 @@ public class AccountController {
 		model.addAttribute("account", accountRepository.getAccount(id));
 		return "accountDetails";
 	}
+	
+	@RequestMapping("/orderList")
+	public String orderList(Model model) {
+		model.addAttribute("orders", accountRepository.getOrders());
+		return "orderList";
+	}
 }

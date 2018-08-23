@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
+import com.lunch.model.Order;
+
 /**
  * @author
  *
@@ -32,6 +34,12 @@ public class RemoteAccountRepository implements AccountRepository {
 	public Account getAccount(String number) {
 		return restTemplate.getForObject(serviceUrl + "/accounts/{id}",
 				Account.class, number);
+	}
+	
+	@Override
+	public List<Order> getOrders() {
+		Order[] orders = restTemplate.getForObject(serviceUrl + "/orders", Order[].class);
+		return Arrays.asList(orders);
 	}
 
 }

@@ -2,7 +2,7 @@
 # Control the InternalResourceViewResolver:
 spring:
   application:
-    name: accounts-web
+    name: lunch-app-consumer
   mvc:
     view:
       prefix: /WEB-INF/views/

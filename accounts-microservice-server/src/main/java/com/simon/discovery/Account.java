@@ -37,6 +37,7 @@ public class Account implements Serializable{
 	public String toString() {
 		return "Account [amount=" + amount + ", number=" + number + ", name=" + name + "]";
 	}
+
 	public Account(Long amount, String name, String number) {
 		super();
 		this.amount = amount;
